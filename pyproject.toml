@@ -1,0 +1,24 @@
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "kiddo_py"
+version = "0.1.0"
+description = "Python bindings for the kiddo k-d tree library"
+authors = [
+    {name = "JER-ry", email = "jer.jerry@outlook.com"},
+]
+requires-python = ">=3"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+dependencies = [
+    "numpy>=2",
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]

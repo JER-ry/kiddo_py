@@ -1,0 +1,22 @@
+[package]
+name = "kiddo_py"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "kiddo_py"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.25.1", features = ["extension-module"] }
+kiddo = "5.0.3"
+numpy = "0.25.0"
+rayon = "1.10.0"
+
+[build-dependencies]
+pyo3-build-config = "0.25.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
